@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @income, class: "new-income-form", local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <h1 class="form-header-text">
+      収入フォーム
+    </h1>
+  </div>
+  <div class="form-content">
+    <div class="form-date">
+      <%= f.label :date, "日付", class: "control-label" %>
+      <%= f.date_field :date, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<% end %>

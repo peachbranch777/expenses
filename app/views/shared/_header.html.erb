@@ -1,0 +1,37 @@
+<header class="header_a">
+  <div class="container">
+    <!— ! ロゴエリア —————————— —>
+    <div class="area_logo_header">
+      <%= link_to 'EXPENCES', root_path, class: "title-name" %>
+      <a class="logo" href="">
+        <img src="app/assets/images/question_mark.png" width="96" height="65">
+      </a>
+      <% if user_signed_in? %>
+        <%= link_to '入力する', new_income_path, class: "post" %>
+      <% end %>
+    </div>
+    <!— ! ナビゲーション —————————— —>
+    <nav class="area_nav_header">
+      <ul class="list_nav_header">
+      <% if user_signed_in? %>
+        <li class="user-name">
+          <%= link_to "#{current_user.name}", "#", class: "link_under_line" %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link_under_line" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'ログイン', new_user_session_path, class: "link_under_line" %>
+        </li>
+        <li>
+          <%= link_to '新規登録', new_user_registration_path, class: "link_under_line" %>
+        </li>
+      <% end %>
+        <%# <li>
+          <a class="btn_contact" href="">お問い合わせ</a>
+        </li> %>
+      </ul>
+    </nav>
+  </div>
+</header>
