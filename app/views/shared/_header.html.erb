@@ -1,15 +1,39 @@
-<div class='nav'>
-  <ul class='lists-left'>
-    <li><%= link_to '収入', "#", class: "category-list" %></li>
-    <li><%= link_to '支出', "#", class: "brand-list" %></li>
-  </ul>
-  <ul class='lists-right'>
-    <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-  </ul>
-</div>
+<header class="header_a">
+  <div class="container">
+    <!— ! ロゴエリア —————————— —>
+    <div class="area_logo_header">
+      <%= link_to 'EXPENCES', root_path, class: "title-name" %>
+      <a class="logo" href="">
+        <img src="app/assets/images/question_mark.png" width="96" height="65">
+      </a>
+      <% if user_signed_in? %>
+        <a class="post" href="">
+          入力する
+        </a>
+      <% end %>
+    </div>
+    <!— ! ナビゲーション —————————— —>
+    <nav class="area_nav_header">
+      <ul class="list_nav_header">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'レポート', "#", class: "link_under_line" %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link_under_line" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'ログイン', new_user_session_path, class: "link_under_line" %>
+        </li>
+        <li>
+          <%= link_to '新規登録', new_user_registration_path, class: "link_under_line" %>
+        </li>
+      <% end %>
+        <%# <li>
+          <a class="btn_contact" href="">お問い合わせ</a>
+        </li> %>
+      </ul>
+    </nav>
+  </div>
+</header>
