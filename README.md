@@ -20,8 +20,8 @@
 
 | Colum              | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| price              | string     | null: false, unique: true      |
-| category_id        | integer    | null: false                    |
+| price              | integer    | null: false                    |
+| category           | integer    | null: false                    |
 | date               | date       | null: false                    |
 | memo               | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |

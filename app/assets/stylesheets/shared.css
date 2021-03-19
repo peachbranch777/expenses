@@ -54,18 +54,22 @@
 .list_nav_header {
   display: flex;
   align-items: center;
+  font-size: 30px
 }
 .list_nav_header > li + li {
   margin: 0 40px;
 }
+
 .list_nav_header a {
   color: #fff;
-  font: 500 15px/1em 'noto sans japanese',sans-serif;
+  /* font: 500 15px/1em 'noto sans japanese',sans-serif; */
 }
 
 .link_under_line {
   text-decoration: none;
+  font-size: 18px;
 }
+
 .list_nav_header .btn_contact {
   color: #000;
   display: flex;

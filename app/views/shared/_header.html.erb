@@ -7,17 +7,15 @@
         <img src="app/assets/images/question_mark.png" width="96" height="65">
       </a>
       <% if user_signed_in? %>
-        <a class="post" href="">
-          入力する
-        </a>
+        <%= link_to '入力する', new_income_path, class: "post" %>
       <% end %>
     </div>
     <!— ! ナビゲーション —————————— —>
     <nav class="area_nav_header">
       <ul class="list_nav_header">
       <% if user_signed_in? %>
-        <li>
-          <%= link_to 'レポート', "#", class: "link_under_line" %>
+        <li class="user-name">
+          <%= link_to "#{current_user.name}", "#", class: "link_under_line" %>
         </li>
         <li>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link_under_line" %>
