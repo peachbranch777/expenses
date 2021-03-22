@@ -1,0 +1,80 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @spending, class: "new-income-form", local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <h1 class="form-header-text">
+      <%= link_to '支出フォーム', new_spending_path, class:"post-income-text" %>
+    </h1>
+  </div>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-content">
+    <div class="form-date">
+      <label class="date-category">
+        <span>日付</span>
+        <%= f.date_field :date, class: 'form-control', id:"date" %>
+      </label>
+    </div>
+    <div class="form-category">
+      <div class="upper-form">
+        <label class="meal-category">
+          <%= image_tag 'meal.png' , size: '70x70' %>
+          <span class="form-letter">食費</span>
+          <%= f.radio_button :category, '食費' %>
+        </label>
+        <label class="daily-necessities-category">
+          <%= image_tag 'daily-necessities.png', size: '70x70' %>
+          <span class="form-letter">日用品</span>
+          <%= f.radio_button :category, '日用品' %>
+        </label>
+        <label class="fashion-category">
+          <%= image_tag 'fashion.png', size: '70x70' %>
+          <span class="form-letter">ファッション</span>
+          <%= f.radio_button :category, 'ファッション' %>
+        </label>
+        <label class="hobby-category">
+          <%= image_tag 'hobby.png', size: '70x70' %>
+          <span class="form-letter">趣味・娯楽</span>
+          <%= f.radio_button :category, '趣味・娯楽' %>
+        </label>
+        <label class="medical-category">
+          <%= image_tag 'medical.png', size: '70x70' %>
+          <span class="form-letter">医療費</span>
+          <%= f.radio_button :category, '医療費' %>
+        </label>
+      </div>
+      <div class="lower-form">
+        <label class="entertainment-expenses-category">
+          <%= image_tag 'entertainment-expenses.png', size: '70x70' %>
+          <span class="form-letter">交際費</span>
+          <%= f.radio_button :category, '交際費' %>
+        </label>
+        <label class="tility-charges-category">
+          <%= image_tag 'tility-charges.png', size: '70x70' %>
+          <span class="form-letter">光熱費</span>
+          <%= f.radio_button :category, '光熱費' %>
+        </label>
+        <label class="travel-cost-category">
+          <%= image_tag 'travel-cost.png', size: '70x70' %>
+          <span class="form-letter">交通費</span>
+          <%= f.radio_button :category, '交通費' %>
+        </label>
+        <label class="etc-category">
+          <%= image_tag 'etc.png', size: '70x70' %>
+          <span class="form-letter">その他</span>
+          <%= f.radio_button :category, 'その他' %>
+        </label>
+      </div>
+    </div>
+    <div class="form-price">
+      <%= f.text_field :price, class:"price-input", placeholder:"￥" %>
+    </div>
+    <div class="form-memo">
+      <%= f.text_field :memo, class:"memo-input", placeholder:"memo" %>
+    </div>
+    <div class="form-submit">
+      <%= f.submit "SEND" ,class:"submit-red-btn" %>
+    </div>
+  </div>
+</div>
+<% end %>

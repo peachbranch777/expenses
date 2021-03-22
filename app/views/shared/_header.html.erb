@@ -2,12 +2,13 @@
   <div class="container">
     <!— ! ロゴエリア —————————— —>
     <div class="area_logo_header">
-      <%= link_to 'EXPENCES', root_path, class: "title-name" %>
-      <a class="logo" href="">
-        <img src="app/assets/images/question_mark.png" width="96" height="65">
-      </a>
+      <%= link_to 'こつこつ家計簿', root_path, class: "title-name" %>
+      <%= link_to root_path, target: "_blank" do %>
+        <%= image_tag 'etc.png' , size: '70x70', class:"logo" %>
+      <% end %>
       <% if user_signed_in? %>
-        <%= link_to '入力する', new_income_path, class: "post" %>
+        <%= link_to '収入', new_income_path, class: "post" %>
+        <%= link_to '支出', new_spending_path, class: "post" %>
       <% end %>
     </div>
     <!— ! ナビゲーション —————————— —>
@@ -17,7 +18,7 @@
         <li class="user-name">
           <%= link_to "#{current_user.name}", "#", class: "link_under_line" %>
         </li>
-        <li>
+        <li class="user-name">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link_under_line" %>
         </li>
       <% else %>
@@ -28,9 +29,6 @@
           <%= link_to '新規登録', new_user_registration_path, class: "link_under_line" %>
         </li>
       <% end %>
-        <%# <li>
-          <a class="btn_contact" href="">お問い合わせ</a>
-        </li> %>
       </ul>
     </nav>
   </div>

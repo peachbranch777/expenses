@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :income do
+  factory :spending do
     price {Faker::Number.rand(1..100000000)}
-    category {"給料"}
-    memo {"2月分給料"}
+    category {"趣味"}
+    memo {"友人とゴルフ"}
     date { Faker::Date.between(from: '1930-01-01', to: '2050-12-31') }
 
     association :user

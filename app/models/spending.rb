@@ -1,4 +1,4 @@
-class Income < ApplicationRecord
+class Spending < ApplicationRecord
   with_options presence: true do
     validates :price, inclusion: { in: 1..100000000 }, format: {with: /\A[0-9]+\z/}, numericality: true 
     validates :category

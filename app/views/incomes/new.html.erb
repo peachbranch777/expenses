@@ -4,13 +4,66 @@
 <div class="form-wrap">
   <div class="form-header">
     <h1 class="form-header-text">
-      収入フォーム
+      <%= link_to '収入フォーム', new_income_path, class:"post-income-text" %>
     </h1>
   </div>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="form-content">
     <div class="form-date">
-      <%= f.label :date, "日付", class: "control-label" %>
-      <%= f.date_field :date, class: 'form-control' %>
+      <label class="date-category">
+        <span>日付</span>
+        <%= f.date_field :date, class: 'form-control', id:"date" %>
+      </label>
+    </div>
+    <div class="form-category">
+      <div class="upper-form">
+        <label class="meal-category">
+          <%= image_tag 'salary.png' , size: '70x70' %>
+          <span class="form-letter">給料</span>
+          <%= f.radio_button :category, '給料' %>
+        </label>
+        <label class="daily-necessities-category">
+          <%= image_tag 'pocket-money.png', size: '70x80' %>
+          <span class="form-letter">おこづかい</span>
+          <%= f.radio_button :category, 'おこづかい' %>
+        </label>
+        <label class="fashion-category">
+          <%= image_tag 'bonus.png', size: '70x70' %>
+          <span class="form-letter">賞与</span>
+          <%= f.radio_button :category, '賞与' %>
+        </label>
+        <label class="hobby-category">
+          <%= image_tag 'investing.png', size: '70x70' %>
+          <span class="form-letter">投資</span>
+          <%= f.radio_button :category, '投資' %>
+        </label>
+        <label class="medical-category">
+          <%= image_tag 'second-business.png', size: '80x80' %>
+          <span class="form-letter">副業</span>
+          <%= f.radio_button :category, '副業' %>
+        </label>
+      </div>
+      <div class="lower-form">
+        <label class="entertainment-expenses-category">
+          <%= image_tag 'incidental-income.png', size: '70x70' %>
+          <span class="form-letter">臨時収入</span>
+          <%= f.radio_button :category, '臨時収入' %>
+        </label>
+        <label class="etc-category">
+          <%= image_tag 'etc.png', size: '70x70' %>
+          <span class="form-letter">その他</span>
+          <%= f.radio_button :category, 'その他' %>
+        </label>
+      </div>
+    </div>
+    <div class="form-price">
+      <%= f.text_field :price, class:"price-input", placeholder:"￥" %>
+    </div>
+    <div class="form-memo">
+      <%= f.text_field :memo, class:"memo-input", placeholder:"memo" %>
+    </div>
+    <div class="form-submit">
+      <%= f.submit "SEND" ,class:"submit-red-btn" %>
     </div>
   </div>
 </div>
