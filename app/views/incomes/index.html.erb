@@ -3,7 +3,9 @@
 <div class="post-content-parent">
   <div class="post-content">
     <div class="left-content">
-      <div class="title">さんの支出</div>
+      <% if user_signed_in? %>
+      <div class="title"><%= current_user.name %>さんの支出</div>
+      <% end %>
       <div class="post-list-content">
         <% @spending.each do |spending| %>
           <ul class="post-list">
@@ -20,7 +22,9 @@
       </div>
     </div>
     <div class="center-content">
+      <% if user_signed_in? %>
       <div class="title"><%= current_user.name %>さんの収入</div>
+      <% end %>
         <div class="post-list-content">
           <% @income.each do |income| %>
             <ul class="post-list">
@@ -37,7 +41,9 @@
         </div>
     </div>
     <div class="right-content">
+      <% if user_signed_in? %>
       <div class="title"><%= current_user.name %>さんの今月の支出</div>
+      <% end %>
         <div class="right-content-post">
           <% @spendings.each do |spending| %>
             <ul class="right-content-post-content">

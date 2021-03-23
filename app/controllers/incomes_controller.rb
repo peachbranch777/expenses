@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  before_action :authenticate_user!
   
   def index
     @income = Income.includes(:user).order(date: "ASC")
