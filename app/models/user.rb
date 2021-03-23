@@ -8,4 +8,7 @@ class User < ApplicationRecord
     validates :name
   end
   validates :password, :password_confirmation, length: { minimum: 6 }, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/ }
+
+  has_many :incomes
+  has_many :spendings
 end
