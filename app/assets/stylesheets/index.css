@@ -68,7 +68,7 @@ footer,
   overflow: scroll;
 }
 
-.income-title {
+.title {
   font-size: 20px;
   text-align: center;
   width: 100%;
@@ -166,6 +166,15 @@ footer,
 	.post-list ul {
 		display: none;
 	}
+}
+
+.right-content-post-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.month-data {
+  margin: 2px 10px;
 }
 
   

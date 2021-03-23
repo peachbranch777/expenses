@@ -2,6 +2,7 @@ class IncomesController < ApplicationController
   def index
     @income = Income.includes(:user).order(date: "ASC")
     @spending = Spending.includes(:user).order(date: "ASC")
+    @spendings = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
   end
 
   def new
@@ -19,6 +20,7 @@ class IncomesController < ApplicationController
 
   def show
     @income = Income.find(params[:id])
+    @spending = Spending.includes(:user).order(date: "ASC")
   end
 
   def edit
