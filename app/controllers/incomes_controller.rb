@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  
   def index
     @income = Income.includes(:user).order(date: "ASC")
     @spending = Spending.includes(:user).order(date: "ASC")
