@@ -1,2 +1,52 @@
 <%= render "shared/header" %>
 
+<div class="post-content-parent">
+  <div class="post-content">
+    <div class="left-content">
+      <div class="income-title"><%= "#{current_user.name}さんの支出" %></div>
+        <div class="post-list-content">
+          <% @spending.each do |spending| %>
+            <ul class="post-list">
+              <li class="post-list-data-date"><%= spending.date %></li>
+              <ul>
+                <li><%= link_to '詳細', spending_path(spending.id), class:"link_pass" %></li>
+                <li><%= link_to '編集', edit_spending_path(spending.id), class:"link_pass" %></li>
+                <li><%= link_to '削除', spending_path(spending.id), class:"link_pass", method: :delete %></li>
+              </ul>
+              <li class="post-list-data"><%= spending.category %></li>
+              <li class="post-list-data"><%= image_tag 'money.png', size: '50x50' %>¥<%= spending.price %></li>
+            </ul>
+          <% end %>
+        </div>
+    </div>
+    <div class="center-content">
+      <div class="income-title"><%= "#{current_user.name}さんの収入" %></div>
+        <div class="post-list-content">
+          <% @income.each do |income| %>
+            <ul class="post-list">
+              <li class="post-list-data-date"><%= income.date %></li>
+              <ul>
+                <li><%= link_to '詳細', income_path(income.id), class:"link_pass" %></li>
+                <li><%= link_to '編集', edit_income_path(income.id), class:"link_pass" %></li>
+                <li><%= link_to '削除', income_path(income.id), class:"link_pass", method: :delete %></li>
+              </ul>
+              <li class="post-list-data"><%= income.category %></li>
+              <li class="post-list-data"><%= image_tag 'money.png', size: '50x50' %>¥<%= income.price %></li>
+            </ul>
+          <% end %>
+        </div>
+    </div>
+    <div class="right-content">
+      <% @spending.each do |spending| %>
+        <%= spending.start_time.strftime("%Y-%m-%d %H:%M") %>
+      <% end %>
+      <%= month_calendar events: @spending do |date, spending| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+    <div class="push"></div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
+

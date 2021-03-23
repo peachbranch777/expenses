@@ -7,8 +7,8 @@
         <%= image_tag 'etc.png' , size: '70x70', class:"logo" %>
       <% end %>
       <% if user_signed_in? %>
-        <%= link_to '収入', new_income_path, class: "post" %>
         <%= link_to '支出', new_spending_path, class: "post" %>
+        <%= link_to '収入', new_income_path, class: "post" %>
       <% end %>
     </div>
     <!— ! ナビゲーション —————————— —>

@@ -114,11 +114,12 @@
 }
 
 .form-submit {
-  height: 100px;
+  height: 60px;
   width: 100vw;
   text-align: center;
   margin: 2px auto 0 auto;
   background-color: white;
+
 }
 .submit-red-btn {
   height: 50px;
@@ -148,3 +149,4 @@
 .field_with_errors {
   display: contents;
 }
+

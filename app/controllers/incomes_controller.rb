@@ -1,5 +1,7 @@
 class IncomesController < ApplicationController
   def index
+    @income = Income.includes(:user).order(date: "ASC")
+    @spending = Spending.includes(:user).order(date: "ASC")
   end
 
   def new
@@ -13,6 +15,29 @@ class IncomesController < ApplicationController
     else 
       render :new
     end
+  end
+
+  def show
+    @income = Income.find(params[:id])
+  end
+
+  def edit
+    @income = Income.find(params[:id])
+  end
+
+  def update
+    @income = Income.find(params[:id])
+    if @income.update(income_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @income = Income.find(params[:id])
+    @income.destroy
+    redirect_to root_path
   end
 
   private

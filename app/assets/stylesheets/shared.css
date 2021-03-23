@@ -6,11 +6,11 @@
 .header_a {
   color: #fff;
   background: #20b2aa;
-	box-shadow: 0 6px 0 #047c71, 0 12px 0 rgba(0,0,0,.1);
+	box-shadow: 6px 6px 6px #047c71, 0 12px 0 rgba(0,0,0,.1);
   
 }
 .header_a > .container {
-  /* height: 60px; */
+  height: 60px;
   display: flex;
   align-items: center;
   max-width: none;
@@ -62,7 +62,7 @@
 .area_logo_header .logo {
   display: block;
   margin-left: 30px;
-
+  color: whit
 }
 .area_logo_header .logo img {
   height: 70px;
@@ -134,4 +134,30 @@
   /* display: none; */
   margin-left: 10px;
   text-decoration: none;
+}
+
+/* フッター */
+
+.footer {
+  background-color: #eee;
+  width: 100%; 
+  padding: 10px 0;
+  height: 60px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.copyright {
+  text-align: center;;
+  font-size: 15px;
+}
+
+.footer2 {
+  background-color: #eee;
+  padding: 10px 0;
+  margin-top: 60px;
+}
+
+.copyright2 {
+  text-align: center;
 }
