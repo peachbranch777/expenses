@@ -37,12 +37,6 @@
         </div>
     </div>
     <div class="right-content">
-      <% @spending.each do |spending| %>
-        <%= spending.start_time.strftime("%Y-%m-%d %H:%M") %>
-      <% end %>
-      <%= month_calendar events: @spending do |date, spending| %>
-        <%= date.day %>
-      <% end %>
     </div>
     <div class="push"></div>
   </div>
