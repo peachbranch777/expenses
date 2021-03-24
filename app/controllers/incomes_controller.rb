@@ -5,6 +5,8 @@ class IncomesController < ApplicationController
     @income = Income.includes(:user).order(date: "ASC")
     @spending = Spending.includes(:user).order(date: "ASC")
     @spendings = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
+    @spending_sum = Spending.all.sum(:price)
+    @income_sum = Income.all.sum(:price)
   end
 
   def new

@@ -141,15 +141,16 @@
 .footer {
   background-color: #eee;
   width: 100%; 
-  padding: 10px 0;
-  height: 60px;
-  position: absolute;
-  bottom: 0px;
+  height: 40px;
+  position: absolute;/* ←絶対位置 */
+  bottom: 0;
 }
 
 .copyright {
-  text-align: center;;
+  text-align: center;
   font-size: 15px;
+  height: 100%;
+  padding: 10px 0;
 }
 
 .footer2 {
