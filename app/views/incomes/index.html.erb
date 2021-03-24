@@ -7,7 +7,7 @@
         <div class="title"><%= current_user.name %>さんの支出</div>
         <% end %>
         <div class="post-list-content">
-          <% @spending.each do |spending| %>
+          <% @spendings.each do |spending| %>
             <ul class="post-list">
               <li class="post-list-data-date"><%= spending.date %></li>
               <ul>
@@ -26,7 +26,7 @@
         <div class="title"><%= current_user.name %>さんの収入</div>
         <% end %>
           <div class="post-list-content">
-            <% @income.each do |income| %>
+            <% @incomes.each do |income| %>
               <ul class="post-list">
                 <li class="post-list-data-date"><%= income.date %></li>
                 <ul>
@@ -42,15 +42,21 @@
       </div>
       <div class="right-content">
         <% if user_signed_in? %>
-        <div class="title"><%= current_user.name %>さんの今月の支出</div>
+        <div class="title"><%= current_user.name %>さんの今月の収支</div>
         <% end %>
           <div class="right-content-post">
+            <div class="right-content-upper">
+              <%= pie_chart @spending_data.group(:category).sum(:price), width: "400px", height:"350px", class:"date-graph" %>
+            </div>
             <div class="right-content-bottom">
               <div class="income-sum">
                 今月の収入 ¥ <%= @income_sum %>
               </div>
               <div class = "spending-sum">
                 今月の出費 ¥ -<%= @spending_sum %>
+              </div>
+              <div class="expense-sum">
+                収支　計　¥ <%= @expense_sum %>
               </div>
             </div>
           </div>

@@ -10,5 +10,11 @@ class Income < ApplicationRecord
     self.date
   end
 
+  def self.chart_date
+    order(result_date: :asc).pluck('result_date', 'result').to_h
+  end
+
+
+
   belongs_to :user
 end

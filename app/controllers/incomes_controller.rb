@@ -2,11 +2,14 @@ class IncomesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @income = Income.includes(:user).order(date: "ASC")
-    @spending = Spending.includes(:user).order(date: "ASC")
-    @spendings = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
-    @spending_sum = Spending.all.sum(:price)
-    @income_sum = Income.all.sum(:price)
+    # @income = Income.includes(:user).order(date: "ASC")
+    # @spending = Spending.includes(:user).order(date: "ASC")
+    @spendings = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
+    @incomes = Income.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
+    @spending_sum = @spendings.sum(:price)
+    @income_sum = @incomes.sum(:price)
+    @expense_sum = @income_sum - @spending_sum
+    @spending_data = Spending.all.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
   end
 
   def new
