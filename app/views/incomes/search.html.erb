@@ -1,10 +1,10 @@
 <%= render "shared/header" %> 
 <div class="calendar-content">
-  <%= month_calendar events: @spending do |date, spending| %>
+  <%= month_calendar events: @spendings do |date, spendings| %>
     <%= date.day %>
 
-    <% spending.each do |spending| %>
-      <br><%= link_to spending.category, spending_path(spending.id), class:"calendar_link" %> -<%= link_to spending.price, spending_path(spending.id), class:"calendar_link" %>
+    <% spendings.each do |spending| %>
+      <br><%= link_to spending.category, spending_path(spending.id), class:"calendar_link" %> -<%= link_to spending.price, spending_path(spending.id) %>
     <% end %>
   <% end %>
 </div>

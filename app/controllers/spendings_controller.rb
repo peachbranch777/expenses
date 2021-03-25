@@ -38,7 +38,7 @@ class SpendingsController < ApplicationController
 
   def search
     @income = Income.includes(:user).order(date: "ASC")
-    @spending = Spending.includes(:user).order(date: "ASC")
+    @spendings = Spending.includes(:user).order(date: "ASC")
   end
 
   private
