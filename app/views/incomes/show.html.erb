@@ -1,13 +1,4 @@
 <%= render "shared/header" %>
-<div class="calendar-content">
-  <%= month_calendar events: @spending do |date, spending| %>
-    <%= date.day %>
 
-    <% spending.each do |spending| %>
-      <div class="calendar-category">
-        <%= spending.category %>
-        -<%= spending.price %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+
+<%= render "shared/footer2" %>

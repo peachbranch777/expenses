@@ -13,6 +13,7 @@ class SpendingsController < ApplicationController
   end
 
   def show
+    @income = Income.includes(:user).order(date: "ASC")
     @spending = Spending.find(params[:id])
   end
 
@@ -33,6 +34,11 @@ class SpendingsController < ApplicationController
     @spending = Spending.find(params[:id])
     @spending.destroy
     redirect_to root_path
+  end
+
+  def search
+    @income = Income.includes(:user).order(date: "ASC")
+    @spending = Spending.includes(:user).order(date: "ASC")
   end
 
   private

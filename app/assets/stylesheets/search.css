@@ -1,0 +1,21 @@
+.simple-calendar {
+  width: 100vw;
+  height: 100vh;
+ }
+
+.calendar-content {
+  width: 100%;
+  height: 100%;
+}
+
+ 
+
+.calendar-category {
+  width: 100%;
+  height: 100%;
+}
+
+.calendar_link {
+  text-decoration: none;
+  color: black;
+}

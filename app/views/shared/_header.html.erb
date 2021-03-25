@@ -2,7 +2,7 @@
   <div class="container">
     <!— ! ロゴエリア —————————— —>
     <div class="area_logo_header">
-      <%= link_to 'こつこつ家計簿', root_path, class: "title-name" %>
+      <%= link_to 'コツコツ家計簿', root_path, class: "title-name" %>
       <%= link_to root_path, target: "_blank" do %>
         <%= image_tag 'etc.png' , size: '70x70', class:"logo" %>
       <% end %>
@@ -14,21 +14,39 @@
     <!— ! ナビゲーション —————————— —>
     <nav class="area_nav_header">
       <ul class="list_nav_header">
-      <% if user_signed_in? %>
-        <li class="user-name">
-          <%= link_to "#{current_user.name}", "#", class: "link_under_line" %>
-        </li>
-        <li class="user-name">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link_under_line" %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to 'ログイン', new_user_session_path, class: "link_under_line" %>
-        </li>
-        <li>
-          <%= link_to '新規登録', new_user_registration_path, class: "link_under_line" %>
-        </li>
-      <% end %>
+        <div class="user-name"><%= current_user.name %></div>
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
+          <div class="menu-content">
+            <ul>
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to 'カレンダー', search_spendings_path %>
+                </li>
+                <li>
+                  <%= link_to 'マイページ編集', "#" %>
+                </li>
+                <li>
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                </li>
+                <li>
+                  <%= link_to 'トップページへ', root_path %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'ログイン', new_user_session_path, class: "link_under_line" %>
+                </li>
+                <li>
+                  <%= link_to '新規登録', new_user_registration_path, class: "link_under_line" %>
+                </li>
+                <li>
+                  <%= link_to 'トップページへ', root_path %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+      　</div>
       </ul>
     </nav>
   </div>

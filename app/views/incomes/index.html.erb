@@ -4,7 +4,7 @@
     <div class="post-content">
       <div class="left-content">
         <% if user_signed_in? %>
-        <div class="title"><%= current_user.name %>さんの支出</div>
+        <div class="title"><%= @this_month %>月の支出</div>
         <% end %>
         <div class="post-list-content">
           <% @spendings.each do |spending| %>
@@ -15,7 +15,7 @@
                 <li><%= link_to '編集', edit_spending_path(spending.id), class:"link_pass" %></li>
                 <li><%= link_to '削除', spending_path(spending.id), class:"link_pass", method: :delete %></li>
               </ul>
-              <li class="post-list-data"><%= spending.category %></li>
+              <li class="post-list-data"><%= spending.category %>(<%= spending.memo %>)</li>
               <li class="post-list-data"><%= image_tag 'money.png', size: '50x50' %>¥<%= spending.price %></li>
             </ul>
           <% end %>
@@ -23,14 +23,14 @@
       </div>
       <div class="center-content">
         <% if user_signed_in? %>
-        <div class="title"><%= current_user.name %>さんの収入</div>
+        <div class="title"><%= @this_month %>月の収入</div>
         <% end %>
           <div class="post-list-content">
             <% @incomes.each do |income| %>
               <ul class="post-list">
                 <li class="post-list-data-date"><%= income.date %></li>
                 <ul>
-                  <li><%= link_to '詳細', income_path(income.id), class:"link_pass" %></li>
+                  <li><%= link_to '詳細',  income_path(income.id), class:"link_pass" %></li>
                   <li><%= link_to '編集', edit_income_path(income.id), class:"link_pass" %></li>
                   <li><%= link_to '削除', income_path(income.id), class:"link_pass", method: :delete %></li>
                 </ul>
@@ -42,7 +42,7 @@
       </div>
       <div class="right-content">
         <% if user_signed_in? %>
-        <div class="title"><%= current_user.name %>さんの今月の収支</div>
+        <div class="title"><%= @this_month %>月の収支</div>
         <% end %>
           <div class="right-content-post">
             <div class="right-content-upper">

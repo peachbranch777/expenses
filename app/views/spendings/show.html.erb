@@ -1,1 +1,24 @@
 <%= render "shared/header" %>
+
+<div class="show-content">
+  <div class="show-category">
+    <h1 class="show-category-name"><%= @spending.category %></h1>
+  </div>
+  <table class="detail-table">
+    <tbody>
+      <tr>
+        <th class="detail-item">日付</th>
+        <td class="detail-value"><%= @spending.date %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">金額</th>
+        <td class="detail-value"><%= @spending.price %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">メモ</th>
+        <td class="detail-value"><%= @spending.memo %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= render "shared/footer3" %>

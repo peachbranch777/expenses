@@ -1,15 +1,17 @@
 class IncomesController < ApplicationController
   before_action :authenticate_user!
+  require "time"
   
   def index
-    # @income = Income.includes(:user).order(date: "ASC")
-    # @spending = Spending.includes(:user).order(date: "ASC")
+    @income = Income.includes(:user).order(date: "ASC")
+    @spending = Spending.includes(:user).order(date: "ASC")
     @spendings = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
     @incomes = Income.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
     @spending_sum = @spendings.sum(:price)
     @income_sum = @incomes.sum(:price)
     @expense_sum = @income_sum - @spending_sum
     @spending_data = Spending.all.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
+    @this_month = Time.new.month
   end
 
   def new
@@ -47,6 +49,11 @@ class IncomesController < ApplicationController
     @income = Income.find(params[:id])
     @income.destroy
     redirect_to root_path
+  end
+
+  def search
+    @income = Income.includes(:user).order(date: "ASC")
+    @spending = Spending.includes(:user).order(date: "ASC")
   end
 
   private

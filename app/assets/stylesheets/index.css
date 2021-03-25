@@ -98,7 +98,8 @@ body {
 
 .post-list {
 	position: relative;
-	overflow: hidden;
+	overflow: scroll;
+  text-overflow: ellipsis;
 }
 .post-list .post-list-data-date {
 	filter: blur(0);

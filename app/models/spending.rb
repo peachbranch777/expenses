@@ -10,10 +10,6 @@ class Spending < ApplicationRecord
     self.date
   end
 
-  def pie_chart
-    self.category
-  end
-
 
   belongs_to :user
 end
