@@ -3,7 +3,7 @@
   margin: 60px auto;
   padding: 60px;
   background-color: #fff;
-  border: 5px solid palevioletred;
+  border: 5px solid #20b2aa;
   border-radius: 5px;
 }
 .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
@@ -27,11 +27,35 @@
   width: 60px;
   margin-top: 5px;
 }
-.account-page .account-page__header h5 {
+.account-page .account-page__header .link_to_bio {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
+  text-decoration: none;
+  color: gray;
+  border-bottom: 3px solid #eee;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
 }
+
+.link_to_bio::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #31aae2;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.link_to_bio:hover::after{
+  width: 100%;
+}
+
+
 .account-page .account-page__header .btn {
   margin-top: 20px;
   color: #fff;
@@ -69,7 +93,7 @@
   float: left;
   margin-top: 20px;
   color: #fff;
-  background-color:palevioletred;
+  background-color: #20b2aa;
 }
 .account-page .field-label .field_with_errors {
   display: inline-block;
@@ -87,7 +111,7 @@
   right: 0;
   bottom: 0;
   width: 5px;
-  background-color: #d65f4c;
+  background-color: #20b2aa;
 }
 
 #error_explanation {

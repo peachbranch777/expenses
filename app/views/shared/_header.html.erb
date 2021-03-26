@@ -14,7 +14,9 @@
     <!— ! ナビゲーション —————————— —>
     <nav class="area_nav_header">
       <ul class="list_nav_header">
+        <% if user_signed_in? %>
         <div class="user-name"><%= current_user.name %></div>
+        <% end %>
         <div class="hamburger-menu">
           <input type="checkbox" id="menu-btn-check">
           <label for="menu-btn-check" class="menu-btn"><span></span></label>

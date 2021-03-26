@@ -4,7 +4,7 @@
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Log in</h2>
-      <h5>既にアカウントをお持ちの方</h5>
+      <%= link_to '新規登録される方はこちら', new_user_registration_path, class:"link_to_bio" %>
       <%# <%= render "devise/shared/links"%> 
     </div>
     <div class='account-page__inner--right user-form'>
