@@ -1,8 +1,9 @@
 class IncomesController < ApplicationController
   before_action :authenticate_user!
   before_action :income_id, only: [:show, :edit, :update, :destroy]
-  before_action :income_user, only: [:index,:search]
+  before_action :income_user, only: [:index, :search]
   before_action :spending_user, only: [:index,:search, :show]
+  before_action :move_to_index, only: [:show, :edit, :destroy, :update, :create]
   require "time"
   
   def index
@@ -62,5 +63,10 @@ class IncomesController < ApplicationController
   end
   def spending_user
     @spendings = Spending.includes(:user).order(date: "ASC")
+  end
+  def move_to_index
+    if current_user.id != @income.user.id
+      redirect_to root_path
+    end
   end
 end
