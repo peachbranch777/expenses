@@ -6,8 +6,8 @@ body {
 }
 
 .footerFixed{
-  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
-  position: relative;/* ←相対位置 */
+  min-height: 100vh; 
+  position: relative;
   padding-bottom: 40px; 
   box-sizing: border-box;
 }
@@ -15,7 +15,6 @@ body {
 
 .post-content-parent {
   height: 100%;
-  /* padding-bottom: 40px; */
 }
 
 .post-content {
@@ -55,7 +54,6 @@ body {
   height: 100vh;
   border: 3px solid #eee;
   border-top: transparent;
-  /* border-bottom: transparent; */
   overflow: scroll;
 }
 
@@ -90,7 +88,6 @@ body {
   height: 100vh;
   border: 3px solid #eee;
   border-top: none;
-  /* border-bottom: transparent; */
 }
 
 

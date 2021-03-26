@@ -141,7 +141,7 @@
   text-decoration: inherit;
 	background: #20b2aa;
 	box-shadow: 0 6px 0 #047c71, 0 12px 0 rgba(0,0,0,.2);
-  transition: color .3s, background .3s, box-shadow .3s, transform 0.3s;
+  /* transition: color .3s, background .3s, box-shadow .3s, transform 0.3s; */
 }
 
 .btn:hover {

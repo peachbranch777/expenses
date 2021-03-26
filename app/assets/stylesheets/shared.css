@@ -36,7 +36,7 @@
 }
 
 #menu-btn-check:checked ~ .menu-btn span {
-  background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  background-color: rgba(255, 255, 255, 0);
 }
 #menu-btn-check:checked ~ .menu-btn span::before {
   bottom: 0;
@@ -90,14 +90,14 @@
   height: 100%;
   position: fixed;
   top: 0;
-  left: 100%;/*leftの値を変更してメニューを画面外へ*/
+  left: 100%;
   z-index: 80;
   background-color: #20b2aa;
-  transition: all 0.5s;/*アニメーション設定*/
+  transition: all 0.5s;
 }
 
 #menu-btn-check:checked ~ .menu-content {
-  left: 0;/*メニューを画面内へ*/
+  left: 0;
 }
 
 
@@ -184,9 +184,6 @@
   align-items: center;
   font-size: 30px;
   justify-content: space-between;
-}
-.list_nav_header > li + li {
-  /* margin: 0 40px; */
 }
 
 .list_nav_header a {
