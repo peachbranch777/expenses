@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   margin-bottom: 5vh;
+  background-color:#d6e6f2;
+  background-color: orange;
 }
 
 .error-message {
