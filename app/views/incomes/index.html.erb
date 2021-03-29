@@ -42,17 +42,17 @@
         <% end %>
           <div class="right-content-post">
             <div class="right-content-upper">
-              <%= pie_chart @spending_data.group(:category).sum(:price), width: "400px", height:"350px", class:"date-graph" %>
+              <%= pie_chart @spending_data.group(:category).sum(:price), thousands: ",", width: "450px", height:"450px", class:"date-graph", library: {title: {text: "今月の支出 計 #{@spending_sum}円"}} %>
             </div>
             <div class="right-content-bottom">
               <div class="income-sum">
-                今月の収入 ¥ <%= @income_sum %>
+                今月の収入 <%= @income_sum %>円
               </div>
               <div class = "spending-sum">
-                今月の出費 ¥ -<%= @spending_sum %>
+                今月の出費 -<%= @spending_sum %>円
               </div>
               <div class="expense-sum">
-                収支　計　¥ <%= @expense_sum %>
+                収支　計 <%= @expense_sum %>円
               </div>
             </div>
           </div>

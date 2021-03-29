@@ -7,8 +7,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../index")
-require("chartkick")
-require("chart.js")
+// require("chartkick")
+// require("chart.js")
+require("chartkick").use(require("highcharts"))
 
 
 
