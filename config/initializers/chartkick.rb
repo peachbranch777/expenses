@@ -2,9 +2,10 @@ Chartkick.options = {
   donut: true, # ドーナツグラフ
   width: '400px',
   colors: [ "#769fcd",
-            "#b9d7ea",
-            "#d6e6f2",
-            "#f7fbfc",
+            "greenyellow",
+            "orange",
+            "turquoise",
+            "pink",
           ],
   message: {empty: "データがありません"},
   thousands: ",", 
