@@ -1,0 +1,226 @@
+
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.footerFixed{
+  min-height: 100vh; 
+  position: relative;
+  padding-bottom: 40px; 
+  box-sizing: border-box;
+}
+
+
+.post-content-parent {
+  height: 100%;
+}
+
+.post-content {
+  width: 100vw;
+  display: flex;
+  height: 100%;
+}
+.post-list {
+  border: 3px solid #20b2aa;
+  width: 47%;
+  height: 150px;
+  margin: 5px;
+}
+
+
+.post-list-data {
+  text-align: center;
+  line-height: 40px;
+}
+
+.post-list-data-date {
+  border-bottom: 2px solid #eee;
+  text-align: center;
+  background-color: #eee;
+}
+
+.post-list-data-good {
+  margin-left: 45px;
+}
+
+.post-list-data-bad {
+  margin-right: 45px;
+}
+
+.left-content {
+  width: 30vw;
+  height: 100vh;
+  border: 3px solid #eee;
+  border-top: transparent;
+  overflow: scroll;
+}
+
+.post-list-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 3px solid #eee;
+  text-decoration: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-user-name {
+  text-decoration: none;
+}
+
+
+
+.center-content {
+  width: 30vw;
+  height: 100vh;
+  border: 3px solid #eee;
+  border-top: none;
+}
+
+
+
+
+.post-list {
+	position: relative;
+	overflow: scroll;
+  text-overflow: ellipsis;
+}
+.post-list .post-list-data-date {
+	filter: blur(0);
+	transition: .0s;
+}
+.post-list-data-date:hover .post-list {
+	filter: blur(15px);
+	transition: .7s;
+}
+.post-list ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	transform: scale(0);
+	transition: .0s;
+	opacity: 0;
+	background-color: #20b2aa;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.post-list:hover ul {
+	transform: scale(1);
+	transition: .7s;
+	opacity: 1;
+}
+.post-list ul li {
+	border-bottom: 1px solid #999;
+}
+.post-list ul li:first-child {
+	border-top: 1px solid #999;
+}
+.post-list ul li .link_pass {
+	display: block;
+	background: url(arrow.png) no-repeat 8px center;
+	background-size: 3px auto;
+	padding: 10px 0 10px 16px;
+	text-decoration: none;
+	transition: .3s;
+	color: #000;
+}
+.post-list ul li:hover .link_pass {
+	background-color: rgba(255,255,255,0.9);
+}
+@media screen and (max-width: 640px) {
+	.post-list:hover .post-list-data-date {
+		filter: blur(0);
+	}
+	.post-list-data-date a:hover .post-list {
+		opacity: .5;
+	}
+	.post-list ul {
+		display: none;
+	}
+}
+
+.right-content {
+  width: 40vw;
+  height: 90%;
+  border: 3px solid #eee;
+  border-top: transparent;
+  border-bottom: transparent;
+  position: relative;
+}
+
+.right-content-post {
+  width:100%;
+  height: 60%;
+}
+
+.right-content-upper {
+  height: 60%;
+  width: 50%;
+  margin: 10px 0 0 80px;
+  text-align: center;
+
+}
+
+
+.right-content-bottom {
+  width: 100%;
+  height: 40%; 
+  margin-top: 30px;
+}
+
+.highcharts-title {
+}
+
+
+.spending-sum {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  margin: 30px 0 ;
+  text-align: center;
+  border: 1px solid white;
+  padding-top: 12px;
+}
+
+.income-sum {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  text-align: center;
+  border: 1px solid white;
+  padding-top: 12px;
+}
+
+.expense-sum {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  text-align: center;
+  border: 1px solid white;
+  padding-top: 12px;
+}
+
+.date-graph {
+  text-align: center;
+}
+
+

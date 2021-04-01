@@ -1,0 +1,41 @@
+.show-content {
+  height: 80vh;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.show-category-name {
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 5px solid #eee;
+}
+
+/* 商品の概要 */
+
+
+
+
+.detail-table {
+  width: 80%;
+  height: 50%;
+  margin: 80px auto;
+}
+
+.detail-column {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+
+
+
