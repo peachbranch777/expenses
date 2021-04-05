@@ -6,7 +6,7 @@ class CreateIncomes < ActiveRecord::Migration[6.0]
       t.string :category, null: false
       t.date :date, null: false
       t.string :memo, null: false
-      t.references :user, null: false
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
