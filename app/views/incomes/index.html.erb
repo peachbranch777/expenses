@@ -16,7 +16,7 @@
               <li class="post-list-data"><%= spending.category %></li>
               <li class="post-list-data"><%= image_tag 'money.png', size: '50x50' %>¥<%= spending.price %></li>
             </ul>
-          <% end %>
+            <% end %>
         </div>
       </div>
       <div class="center-content">
@@ -37,9 +37,7 @@
           </div>
       </div>
       <div class="right-content">
-        <% if user_signed_in? %>
         <div class="title"><%= @this_month %>月の収支</div>
-        <% end %>
           <div class="right-content-post">
             <div class="right-content-upper">
               <%= pie_chart @spending_data.group(:category).sum(:price), thousands: ",", width: "450px", height:"450px", class:"date-graph", library: {title: {text: "今月の支出 計 #{@spending_sum}円"}} %>
@@ -52,12 +50,11 @@
                 今月の出費 -<%= @spending_sum %>円
               </div>
               <div class="expense-sum">
-                収支　計 <%= @expense_sum %>円
+                収支 計 <%= @expense_sum %>円
               </div>
             </div>
           </div>
       </div>
-    </div>
   </div>
   <%= render "shared/footer" %>
 </div>
