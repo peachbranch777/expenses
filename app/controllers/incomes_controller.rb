@@ -3,16 +3,16 @@ class IncomesController < ApplicationController
   before_action :income_id, only: [:show, :edit, :update, :destroy]
   before_action :income_user, only: [:index, :search]
   before_action :spending_user, only: [:index,:search, :show]
-  before_action :move_to_index, only: [:show, :edit, :destroy, :update, :create]
+  before_action :move_to_index, only: [:show, :edit, :destroy, :update]
   require "time"
   
   def index
-    @spendings_time = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
-    @incomes_time = Income.where(date: Time.now.beginning_of_month..Time.now.end_of_month).includes(:user).order(date: "ASC")
+    @spendings_time = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month).where(user_id: current_user.id).order(date: "ASC")
+    @incomes_time = Income.where(date: Time.now.beginning_of_month..Time.now.end_of_month).where(user_id: current_user.id).order(date: "ASC")
     @spending_sum = @spendings_time.sum(:price)
     @income_sum = @incomes_time.sum(:price)
     @expense_sum = @income_sum - @spending_sum
-    @spending_data = Spending.all.where(date: Time.now.beginning_of_month..Time.now.end_of_month)
+    @spending_data = Spending.where(date: Time.now.beginning_of_month..Time.now.end_of_month).where(user_id: current_user.id)
     @this_month = Time.new.month
   end
 
@@ -62,11 +62,11 @@ class IncomesController < ApplicationController
     @incomes = Income.includes(:user).order(date: "ASC")
   end
   def spending_user
-    @spendings = Spending.includes(:user).order(date: "ASC")
+    @spendings = Spending.where(user_id: current_user.id).includes(:user).order(date: "ASC")
   end
   def move_to_index
-    if current_user.id != @income.user.id
-      redirect_to root_path
-    end
+    # if current_user.id != @income.user.id
+    #   redirect_to root_path
+    # end
   end
 end
